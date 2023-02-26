@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 public class CustomerFormController {
 
     public JFXDatePicker txtDOB;
+    public JFXButton btnBack;
     @FXML
     private AnchorPane pane;
 
@@ -65,4 +66,7 @@ public class CustomerFormController {
 
     }
 
+    public void btnBackOnAction(ActionEvent actionEvent) {
+
+    }
 }

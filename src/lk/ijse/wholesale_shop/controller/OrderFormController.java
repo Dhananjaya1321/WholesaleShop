@@ -1,7 +1,7 @@
 package lk.ijse.wholesale_shop.controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,15 +10,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 
-public class ItemFormController {
+public class OrderFormController {
 
-    public JFXButton btnBack;
-    public Label txtCode;
     @FXML
     private AnchorPane pane;
-
-    @FXML
-    private JFXButton btnAdd;
 
     @FXML
     private TableView<?> table;
@@ -36,22 +31,37 @@ public class ItemFormController {
     private TableColumn<?, ?> cCountact;
 
     @FXML
-    private JFXButton btnUpdate;
+    private JFXButton btnPlaceOrder;
 
     @FXML
-    private JFXButton btnDelete;
+    private JFXButton btnBack;
 
     @FXML
-    private JFXTextField txtCountact;
+    private JFXComboBox<?> cmbItem;
 
     @FXML
-    private JFXTextField txtName;
+    private Label lblCustomerName;
 
     @FXML
-    private JFXTextField txtDOB;
+    private Label lblOID;
 
     @FXML
-    private JFXTextArea txtAddress;
+    private JFXComboBox<?> cmbCustomer;
+
+    @FXML
+    private Label lblItemName;
+
+    @FXML
+    private JFXTextField lblQTY;
+
+    @FXML
+    private JFXButton btnADD;
+
+    @FXML
+    private Label lblTotale;
+
+    @FXML
+    private Label lblPrice;
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
@@ -59,16 +69,13 @@ public class ItemFormController {
     }
 
     @FXML
-    void btnDeleteOnAction(ActionEvent event) {
+    void btnBackOnAction(ActionEvent event) {
 
     }
 
     @FXML
-    void btnUpdateOnAction(ActionEvent event) {
+    void btnPlaceOrderOnAction(ActionEvent event) {
 
     }
 
-    public void btnBackOnAction(ActionEvent actionEvent) {
-
-    }
 }

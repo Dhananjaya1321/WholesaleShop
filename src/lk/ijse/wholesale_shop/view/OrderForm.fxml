@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="427.0" prefWidth="604.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.wholesale_shop.controller.OrderFormController">
+   <children>
+      <Label layoutX="207.0" layoutY="19.0" text="Order Form">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="AQUA" />
+                  <Stop color="#186c96" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <AnchorPane layoutY="413.0" prefHeight="16.0" prefWidth="604.0" style="-fx-background-color: linear-gradient(to right top, #b8bbbb, #c0c3c5, #cacbce, #d6d2d6, #e1dadb);;">
+         <children>
+            <Label layoutX="203.0" prefHeight="17.0" prefWidth="199.0" text="Design and Develop by Isuru Dhananjaya" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="table" editable="true" layoutX="15.0" layoutY="214.0" prefHeight="150.0" prefWidth="574.0">
+         <columns>
+            <TableColumn fx:id="cName" prefWidth="75.0" text="Order ID" />
+            <TableColumn fx:id="cDOB" prefWidth="75.0" text="Customer" />
+            <TableColumn fx:id="cAddress" prefWidth="75.0" text="Item" />
+            <TableColumn fx:id="cCountact" prefWidth="75.0" text="QTY" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <effect>
+            <DropShadow height="16.0" radius="7.5" width="16.0" />
+         </effect>
+      </TableView>
+      <JFXButton fx:id="btnPlaceOrder" buttonType="RAISED" layoutX="461.0" layoutY="369.0" onAction="#btnPlaceOrderOnAction" prefHeight="39.0" prefWidth="128.0" style="-fx-background-color: linear-gradient(to right top, #3511e1, #0075ff, #00abff, #00d8fc, #9efff6); -fx-background-radius: 10;" text="Place Order" textFill="#fffffb">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnBack" buttonType="RAISED" layoutX="15.0" layoutY="14.0" onAction="#btnBackOnAction" prefHeight="30.0" prefWidth="59.0" style="-fx-background-color: linear-gradient(to right top, #3511e1, #0075ff, #00abff, #00d8fc, #9efff6); -fx-background-radius: 10;" text=" " textFill="#fffffb">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXComboBox fx:id="cmbItem" labelFloat="true" layoutX="39.0" layoutY="138.0" prefHeight="30.0" prefWidth="161.0" promptText="Item Code" />
+      <Label layoutX="421.0" layoutY="64.0" text="Name :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCustomerName" layoutX="429.0" layoutY="82.0" prefHeight="30.0" prefWidth="149.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="65.0" text="Order ID :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOID" layoutX="53.0" layoutY="83.0" prefHeight="30.0" prefWidth="149.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbCustomer" labelFloat="true" layoutX="239.0" layoutY="82.0" prefHeight="30.0" prefWidth="161.0" promptText="Customer Phone number" />
+      <Label layoutX="207.0" layoutY="121.0" text="Name :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblItemName" layoutX="215.0" layoutY="141.0" prefHeight="30.0" prefWidth="149.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="lblQTY" labelFloat="true" layoutX="382.0" layoutY="138.0" prefHeight="30.0" prefWidth="68.0" promptText="QTY" />
+      <JFXButton fx:id="btnADD" buttonType="RAISED" layoutX="515.0" layoutY="177.0" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: linear-gradient(to right top, #3511e1, #0075ff, #00abff, #00d8fc, #9efff6); -fx-background-radius: 10;" text="Add" textFill="#fffffb">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="15.0" layoutY="377.0" text="Totel :">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotale" layoutX="74.0" layoutY="377.0" prefHeight="30.0" prefWidth="149.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="461.0" layoutY="121.0" text="Price:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblPrice" layoutX="469.0" layoutY="139.0" prefHeight="30.0" prefWidth="128.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
