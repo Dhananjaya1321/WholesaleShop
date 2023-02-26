@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="pane" prefHeight="427.0" prefWidth="604.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.wholesale_shop.view.HomeFormController">
+   <children>
+      <ImageView fitHeight="272.0" fitWidth="285.0" layoutX="167.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/image/24493638_6941055.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnCustomer" buttonType="RAISED" layoutX="14.0" layoutY="193.0" onAction="#btnCustomerOnAction" prefHeight="91.0" prefWidth="160.0" style="-fx-background-color: linear-gradient(to right top, #3511e1, #0075ff, #00abff, #00d8fc, #9efff6); -fx-background-radius: 20;" text="Customers" textFill="#fffffb">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnItem" buttonType="RAISED" layoutX="430.0" layoutY="193.0" onAction="#btnItemOnAction" prefHeight="91.0" prefWidth="160.0" style="-fx-background-color: linear-gradient(to right top, #3511e1, #0075ff, #00abff, #00d8fc, #9efff6); -fx-background-radius: 20;" text="Items" textFill="#fffffb">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnOrder" buttonType="RAISED" layoutX="230.0" layoutY="312.0" onAction="#btnOrderOnAction" prefHeight="91.0" prefWidth="147.0" style="-fx-background-color: linear-gradient(to right top, #3511e1, #0075ff, #00abff, #00d8fc, #9efff6); -fx-background-radius: 20;" text="Order" textFill="#fffffb">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="148.0" layoutY="14.0" text="Wholesale Shop">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="AQUA" />
+                  <Stop color="#1404ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <AnchorPane layoutY="413.0" prefHeight="16.0" prefWidth="604.0" style="-fx-background-color: linear-gradient(to right top, #b8bbbb, #c0c3c5, #cacbce, #d6d2d6, #e1dadb);;">
+         <children>
+            <Label layoutX="203.0" prefHeight="17.0" prefWidth="199.0" text="Design and Develop by Isuru Dhananjaya" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
