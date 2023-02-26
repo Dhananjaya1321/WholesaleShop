@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,8 +10,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="pane" prefHeight="427.0" prefWidth="604.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.wholesale_shop.view.HomeFormController">
+<AnchorPane fx:id="pane" prefHeight="427.0" prefWidth="604.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.wholesale_shop.controller.HomeFormController">
    <children>
       <ImageView fitHeight="272.0" fitWidth="285.0" layoutX="167.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -53,6 +53,9 @@
                </font>
             </Label>
          </children>
+         <effect>
+            <DropShadow height="10.0" radius="5.75" width="15.0" />
+         </effect>
       </AnchorPane>
    </children>
 </AnchorPane>
