@@ -1,7 +1,6 @@
 package lk.ijse.wholesale_shop.controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -10,9 +9,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 
-public class CustomerFormController {
+public class ItemFormController {
 
-    public JFXDatePicker txtDOB;
     @FXML
     private AnchorPane pane;
 
@@ -46,6 +44,8 @@ public class CustomerFormController {
     @FXML
     private JFXTextField txtName;
 
+    @FXML
+    private JFXTextField txtDOB;
 
     @FXML
     private JFXTextArea txtAddress;
