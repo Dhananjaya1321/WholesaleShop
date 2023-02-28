@@ -75,12 +75,24 @@ public class CustomerFormController {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-
+        CustomersDTO dto = new CustomersDTO(
+                txtName.getText(),
+                txtDOB.getValue(),
+                txtCountact.getText(),
+                txtAddress.getText()
+        );
+        customerBO.delete(dto);
     }
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
-
+        CustomersDTO dto = new CustomersDTO(
+                txtName.getText(),
+                txtDOB.getValue(),
+                txtCountact.getText(),
+                txtAddress.getText()
+        );
+        customerBO.update(dto);
     }
 
     public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
