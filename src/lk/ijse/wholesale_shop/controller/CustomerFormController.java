@@ -7,6 +7,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -19,8 +20,10 @@ import lk.ijse.wholesale_shop.bo.custom.CustomerBO;
 import lk.ijse.wholesale_shop.dto.CustomersDTO;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class CustomerFormController {
+public class CustomerFormController implements Initializable {
 
     public JFXDatePicker txtDOB;
     public JFXButton btnBack;
@@ -100,5 +103,25 @@ public class CustomerFormController {
         stage.setScene(new Scene(FXMLLoader
                 .load(getClass().getResource("/lk/ijse/wholesale_shop/view/HomeForm.fxml"))));
         stage.centerOnScreen();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        /*table.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            btnDelete.setDisable(newValue == null);
+            btnUpdate.setDisable(newValue == null);
+
+            if (newValue != null) {
+                txtName.setText(newValue.getId());
+                txtAddress.setText(newValue.getName());
+                txtCountact.setText(newValue.getAddress());
+                txtDOB.getValue(newValue.getAddress());
+
+                txtCustomerId.setDisable(false);
+                txtCustomerName.setDisable(false);
+                txtCustomerAddress.setDisable(false);
+            }
+        });*/
     }
 }

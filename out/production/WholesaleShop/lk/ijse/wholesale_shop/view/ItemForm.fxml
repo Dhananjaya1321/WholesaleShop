@@ -64,7 +64,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXTextField fx:id="txtCountact" labelFloat="true" layoutX="260.0" layoutY="149.0" prefHeight="35.0" prefWidth="161.0" promptText="QTY">
+      <JFXTextField fx:id="txtQTY" labelFloat="true" layoutX="260.0" layoutY="149.0" prefHeight="35.0" prefWidth="161.0" promptText="QTY">
          <focusColor>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -100,7 +100,7 @@
             </LinearGradient>
          </unFocusColor>
       </JFXTextField>
-      <JFXTextField fx:id="txtDOB" labelFloat="true" layoutX="45.0" layoutY="149.0" prefHeight="35.0" prefWidth="161.0" promptText="Price">
+      <JFXTextField fx:id="txtPrice" labelFloat="true" layoutX="45.0" layoutY="149.0" prefHeight="35.0" prefWidth="161.0" promptText="Price">
          <focusColor>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>

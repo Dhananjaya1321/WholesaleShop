@@ -7,11 +7,12 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class ItemDAOImpl implements ItemDAO {
-    Session session= FactoryConfiguration.getInstance().getSessionFactory();
-    Transaction transaction;
+
+
     @Override
     public boolean save(Items dao) {
-        transaction= session.getTransaction();
+        Session session = FactoryConfiguration.getInstance().getSessionFactory();
+        Transaction transaction = session.beginTransaction();
         session.save(dao);
         transaction.commit();
         session.close();
@@ -20,7 +21,8 @@ public class ItemDAOImpl implements ItemDAO {
 
     @Override
     public boolean delete(Items dao) {
-        transaction= session.getTransaction();
+        Session session = FactoryConfiguration.getInstance().getSessionFactory();
+        Transaction transaction = session.beginTransaction();
         session.delete(dao);
         transaction.commit();
         session.close();
@@ -29,7 +31,8 @@ public class ItemDAOImpl implements ItemDAO {
 
     @Override
     public boolean update(Items dao) {
-        transaction= session.getTransaction();
+        Session session = FactoryConfiguration.getInstance().getSessionFactory();
+        Transaction transaction = session.beginTransaction();
         session.update(dao);
         transaction.commit();
         session.close();
