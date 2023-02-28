@@ -1,6 +1,7 @@
 package lk.ijse.wholesale_shop.dao;
 
 import lk.ijse.wholesale_shop.dao.custom.impl.CustomerDAOImpl;
+import lk.ijse.wholesale_shop.dao.custom.impl.ItemDAOImpl;
 
 public class DAOFactory {
     private static DAOFactory boFactory;
@@ -13,7 +14,7 @@ public class DAOFactory {
     }
     public SupperDAO getDAOType(DAOType boType){
         switch (boType){
-//            case ITEM:return new ItemDAOImpl();
+            case ITEM:return new ItemDAOImpl();
             case CUSTOMER:return new CustomerDAOImpl();
             default:return null;
         }
