@@ -12,6 +12,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.wholesale_shop.bo.BOFactory;
+import lk.ijse.wholesale_shop.bo.BOType;
+import lk.ijse.wholesale_shop.bo.custom.CustomerBO;
+import lk.ijse.wholesale_shop.bo.custom.ItemBO;
+import lk.ijse.wholesale_shop.dto.CustomersDTO;
+import lk.ijse.wholesale_shop.dto.ItemsDTO;
 
 import java.io.IOException;
 
@@ -19,6 +25,8 @@ public class ItemFormController {
 
     public JFXButton btnBack;
     public Label txtCode;
+    public JFXTextField txtPrice;
+    public JFXTextField txtQTY;
     @FXML
     private AnchorPane pane;
 
@@ -57,20 +65,39 @@ public class ItemFormController {
 
     @FXML
     private JFXTextArea txtAddress;
+    ItemBO itemBO = (ItemBO) BOFactory.getInstance().getBOType(BOType.ITEM);
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
-
+        ItemsDTO dto = new ItemsDTO(
+                txtCode.getText(),
+                txtName.getText(),
+                Double.parseDouble(txtPrice.getText()),
+                Integer.parseInt(txtQTY.getText())
+        );
+        itemBO.save(dto);
     }
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-
+        ItemsDTO dto = new ItemsDTO(
+                txtCode.getText(),
+                txtName.getText(),
+                Double.parseDouble(txtPrice.getText()),
+                Integer.parseInt(txtQTY.getText())
+        );
+        itemBO.delete(dto);
     }
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
-
+        ItemsDTO dto = new ItemsDTO(
+                txtCode.getText(),
+                txtName.getText(),
+                Double.parseDouble(txtPrice.getText()),
+                Integer.parseInt(txtQTY.getText())
+        );
+        itemBO.update(dto);
     }
 
     public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
