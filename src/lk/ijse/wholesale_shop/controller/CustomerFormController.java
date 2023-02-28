@@ -12,6 +12,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.wholesale_shop.bo.BOFactory;
+import lk.ijse.wholesale_shop.bo.BOType;
+import lk.ijse.wholesale_shop.bo.SupperBO;
+import lk.ijse.wholesale_shop.bo.custom.CustomerBO;
 import lk.ijse.wholesale_shop.dto.CustomersDTO;
 
 import java.io.IOException;
@@ -56,7 +60,7 @@ public class CustomerFormController {
 
     @FXML
     private JFXTextArea txtAddress;
-
+    CustomerBO customerBO= (CustomerBO) BOFactory.getInstance().getBOType(BOType.CUSTOMER);
     @FXML
     void btnAddOnAction(ActionEvent event) {
         CustomersDTO dto = new CustomersDTO(
@@ -65,6 +69,7 @@ public class CustomerFormController {
                 txtCountact.getText(),
                 txtAddress.getText()
         );
+        customerBO.save(dto);
 
     }
 

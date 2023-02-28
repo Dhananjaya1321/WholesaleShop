@@ -1,6 +1,9 @@
 package lk.ijse.wholesale_shop.bo.custom;
 
 import lk.ijse.wholesale_shop.bo.SupperBO;
+import lk.ijse.wholesale_shop.dao.SupperDAO;
+import lk.ijse.wholesale_shop.dto.CustomersDTO;
 
-public interface CustomerBO extends SupperBO {
+public interface CustomerBO extends SupperDAO {
+    boolean save(CustomersDTO dto);
 }

@@ -13,7 +13,7 @@ public class BOFactory {
     }
     public SupperBO getBOType(BOType boType){
         switch (boType){
-            case ITEM:return new ItemBOImpl();
+//            case ITEM:return new ItemBOImpl();
             case CUSTOMER:return new CustomerBOImpl();
             default:return null;
         }
