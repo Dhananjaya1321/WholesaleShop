@@ -6,6 +6,8 @@ import lk.ijse.wholesale_shop.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.ArrayList;
+
 public class ItemDAOImpl implements ItemDAO {
 
 
@@ -37,5 +39,10 @@ public class ItemDAOImpl implements ItemDAO {
         transaction.commit();
         session.close();
         return true;
+    }
+
+    @Override
+    public ArrayList<Items> getAll() {
+        return null;
     }
 }

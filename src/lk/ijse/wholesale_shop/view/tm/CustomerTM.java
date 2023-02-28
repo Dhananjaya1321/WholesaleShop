@@ -3,7 +3,7 @@ package lk.ijse.wholesale_shop.view.tm;
 import java.time.LocalDate;
 
 
-public class CustomerTM {
+public class CustomerTM implements Comparable<CustomerTM>{
     String name;
     LocalDate dob;
     String contact;
@@ -49,5 +49,20 @@ public class CustomerTM {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "CustomerTM{" +
+                "name='" + name + '\'' +
+                ", dob=" + dob +
+                ", contact='" + contact + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
+
+    @Override
+    public int compareTo(CustomerTM o) {
+        return contact.compareTo(o.getContact());
     }
 }

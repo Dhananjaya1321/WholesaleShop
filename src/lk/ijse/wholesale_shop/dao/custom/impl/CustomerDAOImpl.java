@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 public class CustomerDAOImpl implements CustomerDAO {
 
@@ -39,5 +40,10 @@ public class CustomerDAOImpl implements CustomerDAO {
         transaction.commit();
         session.close();
         return true;
+    }
+
+    @Override
+    public ArrayList<Customers> getAll() {
+        return null;
     }
 }

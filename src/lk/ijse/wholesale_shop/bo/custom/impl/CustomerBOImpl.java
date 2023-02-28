@@ -7,6 +7,8 @@ import lk.ijse.wholesale_shop.dao.custom.CustomerDAO;
 import lk.ijse.wholesale_shop.dto.CustomersDTO;
 import lk.ijse.wholesale_shop.entity.Customers;
 
+import java.util.ArrayList;
+
 public class CustomerBOImpl implements CustomerBO {
     CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getInstance().getDAOType(DAOType.CUSTOMER);
 
@@ -21,6 +23,7 @@ public class CustomerBOImpl implements CustomerBO {
                 )
         );
     }
+
     @Override
     public boolean delete(CustomersDTO dto) {
         return customerDAO.delete(
@@ -32,6 +35,7 @@ public class CustomerBOImpl implements CustomerBO {
                 )
         );
     }
+
     @Override
     public boolean update(CustomersDTO dto) {
         return customerDAO.update(
@@ -42,5 +46,22 @@ public class CustomerBOImpl implements CustomerBO {
                         dto.getAddress()
                 )
         );
+    }
+
+    @Override
+    public ArrayList<CustomersDTO> getAllCustomers() {
+        ArrayList<CustomersDTO> customersDTOS = new ArrayList<>();
+        ArrayList<Customers> customers = customerDAO.getAll();
+        for (Customers c : customers) {
+            customersDTOS.add(
+                    new CustomersDTO(
+                            c.getName(),
+                            c.getDob(),
+                            c.getContact(),
+                            c.getAddress()
+                    )
+            );
+        }
+        return customersDTOS;
     }
 }
