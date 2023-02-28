@@ -21,4 +21,26 @@ public class CustomerBOImpl implements CustomerBO {
                 )
         );
     }
+    @Override
+    public boolean delete(CustomersDTO dto) {
+        return customerDAO.delete(
+                new Customers(
+                        dto.getName(),
+                        dto.getDob(),
+                        dto.getContact(),
+                        dto.getAddress()
+                )
+        );
+    }
+    @Override
+    public boolean update(CustomersDTO dto) {
+        return customerDAO.update(
+                new Customers(
+                        dto.getName(),
+                        dto.getDob(),
+                        dto.getContact(),
+                        dto.getAddress()
+                )
+        );
+    }
 }

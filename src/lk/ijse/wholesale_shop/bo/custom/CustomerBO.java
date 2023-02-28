@@ -6,4 +6,8 @@ import lk.ijse.wholesale_shop.dto.CustomersDTO;
 
 public interface CustomerBO extends SupperBO {
     boolean save(CustomersDTO dto);
+
+    boolean delete(CustomersDTO dto);
+
+    boolean update(CustomersDTO dto);
 }
