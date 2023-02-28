@@ -7,11 +7,11 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class CustomerDAOImpl implements CustomerDAO {
-
+    Session session= FactoryConfiguration.getInstance().getSessionFactory();
+    Transaction transaction;
     @Override
-    public boolean save(Object dao) {
-        Session session= FactoryConfiguration.getInstance().getSessionFactory();
-        Transaction transaction= session.getTransaction();
+    public boolean save(Customers dao) {
+        transaction= session.getTransaction();
         session.save(dao);
         transaction.commit();
         session.close();
@@ -19,12 +19,20 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
     @Override
-    public boolean delete(Object dao) {
-        return false;
+    public boolean delete(Customers dao) {
+        transaction= session.getTransaction();
+        session.delete(dao);
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override
-    public boolean update(Object dao) {
-        return false;
+    public boolean update(Customers dao) {
+        transaction= session.getTransaction();
+        session.update(dao);
+        transaction.commit();
+        session.close();
+        return true;
     }
 }
