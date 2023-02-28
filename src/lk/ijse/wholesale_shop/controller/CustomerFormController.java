@@ -12,6 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.wholesale_shop.dto.CustomersDTO;
 
 import java.io.IOException;
 
@@ -58,11 +59,13 @@ public class CustomerFormController {
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
-        /*txtName.getText();
-        txtDOB.getValue();
-        txtCountact.getText();
-        txtAddress.getText();
-        */
+        CustomersDTO dto = new CustomersDTO(
+                txtName.getText(),
+                txtDOB.getValue(),
+                txtCountact.getText(),
+                txtAddress.getText()
+        );
+
     }
 
     @FXML
