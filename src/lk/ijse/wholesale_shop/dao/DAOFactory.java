@@ -11,7 +11,7 @@ public class DAOFactory {
     public static DAOFactory getInstance(){
         return (boFactory==null) ? boFactory=new DAOFactory() : boFactory;
     }
-    public SupperDAO getBOType(DAOType boType){
+    public SupperDAO getDAOType(DAOType boType){
         switch (boType){
 //            case ITEM:return new ItemDAOImpl();
             case CUSTOMER:return new CustomerDAOImpl();

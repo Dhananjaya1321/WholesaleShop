@@ -2,11 +2,12 @@ package lk.ijse.wholesale_shop.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.time.LocalDate;
 import java.util.Date;
 @Entity
 public class Customers {
     String name;
-    Date dob;
+    LocalDate dob;
     @Id
     String contact;
     String address;
@@ -14,7 +15,7 @@ public class Customers {
     public Customers() {
     }
 
-    public Customers(String name, Date dob, String contact, String address) {
+    public Customers(String name, LocalDate dob, String contact, String address) {
         this.name = name;
         this.dob = dob;
         this.contact = contact;
@@ -29,11 +30,11 @@ public class Customers {
         this.name = name;
     }
 
-    public Date getDob() {
+    public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 
