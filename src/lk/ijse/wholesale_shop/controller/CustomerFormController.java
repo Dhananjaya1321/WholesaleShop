@@ -58,7 +58,11 @@ public class CustomerFormController {
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
-
+        /*txtName.getText();
+        txtDOB.getValue();
+        txtCountact.getText();
+        txtAddress.getText();
+        */
     }
 
     @FXML
