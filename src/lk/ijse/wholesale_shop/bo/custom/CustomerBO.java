@@ -14,4 +14,6 @@ public interface CustomerBO extends SupperBO {
     boolean update(CustomersDTO dto);
 
     ArrayList<CustomersDTO> getAllCustomers();
+
+//    CustomersDTO getCustomers();
 }

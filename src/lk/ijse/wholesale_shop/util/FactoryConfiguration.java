@@ -5,14 +5,17 @@ import lk.ijse.wholesale_shop.entity.Items;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
+//API=application programing interface
 public class FactoryConfiguration {
     private static FactoryConfiguration factoryConfiguration;
     private SessionFactory sessionFactory;
 
     private FactoryConfiguration() {
-        Configuration configuration = new Configuration().configure().addAnnotatedClass(Customers.class).addAnnotatedClass(Items.class);
-        sessionFactory = configuration.buildSessionFactory();
+        sessionFactory = new Configuration().configure()
+                .addAnnotatedClass(Customers.class)
+                .addAnnotatedClass(Items.class)
+                .buildSessionFactory();
+//        sessionFactory = configuration.buildSessionFactory();
     }
 
     public static FactoryConfiguration getInstance() {

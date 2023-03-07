@@ -46,4 +46,13 @@ public class CustomerDAOImpl implements CustomerDAO {
     public ArrayList<Customers> getAll() {
         return null;
     }
+    /*@Override
+    public Customers get() {
+        Session session = FactoryConfiguration.getInstance().getSessionFactory();
+        Transaction transaction = session.beginTransaction();
+        Customers customers=session.get(Customers.class,"q");
+        transaction.commit();
+        session.close();
+        return customers;
+    }*/
 }

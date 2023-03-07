@@ -64,4 +64,9 @@ public class CustomerBOImpl implements CustomerBO {
         }
         return customersDTOS;
     }
+   /* @Override
+    public CustomersDTO getCustomers() {
+        Customers c = customerDAO.get();
+        return new CustomersDTO(c.getName(),c.getDob(),c.getContact(),c.getAddress());
+    }*/
 }
