@@ -130,7 +130,7 @@ public class ItemFormController implements Initializable {
                 txtDOB.setText(String.valueOf(newValue.getQty()));
             }
         });
-        loadAllItems();
+//        loadAllItems();
     }
 
     private void loadAllItems() {

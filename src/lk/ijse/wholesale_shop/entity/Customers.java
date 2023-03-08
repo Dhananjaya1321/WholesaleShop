@@ -2,15 +2,22 @@ package lk.ijse.wholesale_shop.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 @Entity
 public class Customers {
-    String name;
-    LocalDate dob;
+    private String name;
+    private LocalDate dob;
     @Id
-    String contact;
-    String address;
+    private String contact;
+    private String address;
+    @OneToMany(mappedBy = "customer")
+    private List<Orders> orderList = new ArrayList();
+
 
     public Customers() {
     }
@@ -20,6 +27,14 @@ public class Customers {
         this.dob = dob;
         this.contact = contact;
         this.address = address;
+    }
+
+    public Customers(String name, LocalDate dob, String contact, String address, List orderList) {
+        this.name = name;
+        this.dob = dob;
+        this.contact = contact;
+        this.address = address;
+        this.orderList = orderList;
     }
 
     public String getName() {
@@ -52,5 +67,13 @@ public class Customers {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public List<Orders> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<Orders> orderList) {
+        this.orderList = orderList;
     }
 }
