@@ -132,7 +132,7 @@ public class CustomerFormController implements Initializable {
 
             }
         });
-//        loadAllCustomers();
+        loadAllCustomers();
     }
 
     private void loadAllCustomers() {
@@ -142,9 +142,5 @@ public class CustomerFormController implements Initializable {
             table.getItems().add(new CustomerTM(c.getName(), c.getDob(), c.getContact(), c.getAddress()));
         }
     }
-    /*private void loadCustomers() {
-        table.getItems().clear();
-        CustomersDTO c = customerBO.getCustomers();
-            table.getItems().add(new CustomerTM(c.getName(), c.getDob(), c.getContact(), c.getAddress()));
-    }*/
+
 }

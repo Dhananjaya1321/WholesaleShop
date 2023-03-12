@@ -1,9 +1,9 @@
 package lk.ijse.wholesale_shop.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Orders {
@@ -12,6 +12,8 @@ public class Orders {
     Date date;
     @ManyToOne
     private Customers customer;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "orders")
+    List<OrderDetail> orderDetails = new ArrayList<>();
 
     public Orders() {
     }
@@ -21,10 +23,19 @@ public class Orders {
         this.date = date;
     }
 
-    public Orders(String id, Date date, Customers customer) {
+    public Orders(String id, Date date, Customers customer, List<OrderDetail> orderDetails) {
         this.id = id;
         this.date = date;
         this.customer = customer;
+        this.orderDetails = orderDetails;
+    }
+
+    public List<OrderDetail> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(List<OrderDetail> orderDetails) {
+        this.orderDetails = orderDetails;
     }
 
     public String getId() {

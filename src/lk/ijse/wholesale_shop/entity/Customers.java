@@ -1,8 +1,6 @@
 package lk.ijse.wholesale_shop.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,7 +13,7 @@ public class Customers {
     @Id
     private String contact;
     private String address;
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     private List<Orders> orderList = new ArrayList();
 
 
@@ -75,5 +73,16 @@ public class Customers {
 
     public void setOrderList(List<Orders> orderList) {
         this.orderList = orderList;
+    }
+
+    @Override
+    public String toString() {
+        return "Customers{" +
+                "name='" + name + '\'' +
+                ", dob=" + dob +
+                ", contact='" + contact + '\'' +
+                ", address='" + address + '\'' +
+                ", orderList=" + orderList +
+                '}';
     }
 }

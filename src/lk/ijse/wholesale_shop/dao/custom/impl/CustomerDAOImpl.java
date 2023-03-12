@@ -5,10 +5,12 @@ import lk.ijse.wholesale_shop.entity.Customers;
 import lk.ijse.wholesale_shop.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomerDAOImpl implements CustomerDAO {
 
@@ -44,15 +46,11 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public ArrayList<Customers> getAll() {
-        return null;
-    }
-    /*@Override
-    public Customers get() {
         Session session = FactoryConfiguration.getInstance().getSessionFactory();
-        Transaction transaction = session.beginTransaction();
-        Customers customers=session.get(Customers.class,"q");
-        transaction.commit();
+        String sqlQuery = "FROM Customers";
+        Query query = session.createQuery(sqlQuery);
+        List list = query.list();
         session.close();
-        return customers;
-    }*/
+        return (ArrayList<Customers>) list;
+    }
 }
