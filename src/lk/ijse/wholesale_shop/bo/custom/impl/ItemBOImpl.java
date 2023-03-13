@@ -61,6 +61,11 @@ public class ItemBOImpl implements ItemBO {
                     )
             );
         }
+//        System.out.println(items.toString());
         return itemsDTOS;
+    }
+    @Override
+    public String generateNewId() {
+        return itemDAO.generateNewId();
     }
 }

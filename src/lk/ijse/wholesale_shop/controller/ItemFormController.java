@@ -26,6 +26,9 @@ import lk.ijse.wholesale_shop.view.tm.ItemTM;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -124,13 +127,15 @@ public class ItemFormController implements Initializable {
 
         table.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
-                txtName.setText(newValue.getCode());
-                txtAddress.setText(newValue.getName());
-                txtCountact.setText(String.valueOf(newValue.getPrice()));
-                txtDOB.setText(String.valueOf(newValue.getQty()));
+                txtCode.setText(newValue.getCode());
+                txtName.setText(newValue.getName());
+                txtPrice.setText(String.valueOf(newValue.getPrice()));
+                txtQTY.setText(String.valueOf(newValue.getQty()));
             }
         });
-//        loadAllItems();
+        loadAllItems();
+        txtCode.setText(generateNewId());
+
     }
 
     private void loadAllItems() {
@@ -138,6 +143,17 @@ public class ItemFormController implements Initializable {
         ArrayList<ItemsDTO> allItems = itemBO.getAllItems();
         for (ItemsDTO i : allItems) {
             table.getItems().add(new ItemTM(i.getCode(), i.getName(), i.getPrice(), i.getQty()));
+        }
+
+    }
+    public String generateNewId(){
+        String oldId = itemBO.generateNewId();
+        if (oldId!=null) {
+//            String id = rst.getString("id");
+            int newCustomerId = Integer.parseInt(oldId.replace("C00-", "")) + 1;
+            return String.format("C00-%03d", newCustomerId);
+        } else {
+            return "C00-001";
         }
     }
 }

@@ -1,6 +1,7 @@
 package lk.ijse.wholesale_shop.bo;
 
 import lk.ijse.wholesale_shop.bo.custom.impl.CustomerBOImpl;
+import lk.ijse.wholesale_shop.bo.custom.impl.ItemBOImpl;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -15,6 +16,7 @@ public class BOFactory {
         switch (boType){
 //            case ITEM:return new ItemBOImpl();
             case CUSTOMER:return new CustomerBOImpl();
+            case ITEM:return new ItemBOImpl();
             default:return null;
         }
     }

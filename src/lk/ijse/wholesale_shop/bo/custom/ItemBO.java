@@ -13,4 +13,6 @@ public interface ItemBO extends SupperBO {
     boolean update(ItemsDTO dto);
 
     ArrayList<ItemsDTO> getAllItems();
+
+    String generateNewId();
 }
