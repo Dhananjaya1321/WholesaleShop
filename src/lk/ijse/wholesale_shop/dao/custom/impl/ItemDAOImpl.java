@@ -1,16 +1,12 @@
 package lk.ijse.wholesale_shop.dao.custom.impl;
 
 import lk.ijse.wholesale_shop.dao.custom.ItemDAO;
-import lk.ijse.wholesale_shop.entity.Customers;
 import lk.ijse.wholesale_shop.entity.Items;
 import lk.ijse.wholesale_shop.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,10 +51,10 @@ public class ItemDAOImpl implements ItemDAO {
         List list = query.list();
         session.close();
         if (list.size() > 0) {
-            System.out.println("1");
+//            System.out.println("1");
             return (ArrayList<Items>) list;
         } else {
-            System.out.println(2);
+//            System.out.println(2);
             return new ArrayList<>();
         }
 
