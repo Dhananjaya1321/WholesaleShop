@@ -16,10 +16,7 @@ public class CustomerBOImpl implements CustomerBO {
     public boolean save(CustomersDTO dto) {
         return customerDAO.save(
                 new Customers(
-                        dto.getName(),
-                        dto.getDob(),
-                        dto.getContact(),
-                        dto.getAddress()
+                        dto.getName(), dto.getDob(), dto.getContact(), dto.getAddress()
                 )
         );
     }
@@ -28,10 +25,7 @@ public class CustomerBOImpl implements CustomerBO {
     public boolean delete(CustomersDTO dto) {
         return customerDAO.delete(
                 new Customers(
-                        dto.getName(),
-                        dto.getDob(),
-                        dto.getContact(),
-                        dto.getAddress()
+                        dto.getName(), dto.getDob(), dto.getContact(), dto.getAddress()
                 )
         );
     }
@@ -40,10 +34,7 @@ public class CustomerBOImpl implements CustomerBO {
     public boolean update(CustomersDTO dto) {
         return customerDAO.update(
                 new Customers(
-                        dto.getName(),
-                        dto.getDob(),
-                        dto.getContact(),
-                        dto.getAddress()
+                        dto.getName(), dto.getDob(), dto.getContact(), dto.getAddress()
                 )
         );
     }

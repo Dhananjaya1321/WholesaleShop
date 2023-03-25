@@ -7,13 +7,17 @@ import lk.ijse.wholesale_shop.entity.Orders;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+
 //API=application programing interface
 public class FactoryConfiguration {
     private static FactoryConfiguration factoryConfiguration;
     private SessionFactory sessionFactory;
 
     private FactoryConfiguration() {
-        sessionFactory = new Configuration().configure()
+        sessionFactory = new Configuration()
+//                .configure()
+//                .addProperties()
+                .mergeProperties(Utility.getProperties())
                 .addAnnotatedClass(Customers.class)
                 .addAnnotatedClass(Items.class)
                 .addAnnotatedClass(Orders.class)
@@ -21,6 +25,8 @@ public class FactoryConfiguration {
                 .buildSessionFactory();
 //        sessionFactory = configuration.buildSessionFactory();
     }
+
+
 
     public static FactoryConfiguration getInstance() {
         return (factoryConfiguration == null) ? factoryConfiguration = new FactoryConfiguration() : factoryConfiguration;
